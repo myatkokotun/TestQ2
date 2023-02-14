@@ -1,0 +1,82 @@
+﻿@model List<Items>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Available Items</h1>
+</div>
+
+
+<div class="list-group" style="vertical-align:middle">
+    <ul>
+        <li>
+            <a class="list-group-item list-group-item-action flex-column align-items-start listitem" id="computer" onclick="ViewDetail(this)" data-value="descomputer" style="cursor:pointer">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">Computer</h5>
+                    <small>800$</small>
+                </div>
+                <small>Type : Electronic device</small>
+                <input type=hidden id="descomputer" name="abcName" value="A computer is a machine that can be programmed to carry out sequences of arithmetic or logical operations automatically. Modern digital electronic computers can perform generic sets of operations known as programs. These programs enable computers to perform a wide range of tasks." />
+            </a>
+        </li>
+        <li>
+            <a class="list-group-item list-group-item-action flex-column align-items-start listitem" id="printer" onclick="ViewDetail(this)" data-value="desprinter" style="cursor:pointer">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">Printer</h5>
+                    <small>760$</small>
+                </div>
+                <small>Type : Electronic device</small>
+                <input type=hidden id="desprinter" name="abcName" value="In computing, a printer is a peripheral machine which makes a persistent representation of graphics or text, usually on paper. While most output is human-readable, bar code printers are an example of an expanded use for printers." />
+            </a>
+        </li>
+        <li>
+            <a class="list-group-item list-group-item-action flex-column align-items-start listitem" id="table" onclick="ViewDetail(this)" data-value="destable" style="cursor:pointer">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">Table</h5>
+                    <small>300$</small>
+                </div>
+                <small>Type : Funiture</small>
+                <input type=hidden id="destable" name="abcName" value="A table is a piece of furniture with a flat table-style work surface used in a school, office, home or the like for academic, professional or domestic activities such as reading, writing, or using equipment such as a computer.[1][2] Desks often have one or more drawers, compartments, or pigeonholes to store items such as office supplies and papers." />
+            </a>
+        </li>
+        <li>
+            <a class="list-group-item list-group-item-action flex-column align-items-start listitem" id="computer" onclick="ViewDetail(this)" data-value="dessphone" style="cursor:pointer">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">Smartphone</h5>
+                    <small>900$</small>
+                </div>
+                <small>Type : Electronic device</small>
+                <input type=hidden id="dessphone" name="abcName" value="A smartphone is a portable computer device that combines mobile telephone functions and computing functions into one unit." />
+            </a>
+        </li>
+        <li>
+            <a class="list-group-item list-group-item-action flex-column align-items-start listitem" id="computer" onclick="ViewDetail(this)" data-value="deschair" style="cursor:pointer">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">Chair</h5>
+                    <small>500$</small>
+                </div>
+                <small>Type : Funiture</small>
+                <input type=hidden id="deschair" name="abcName" value="A chair is a type of seat, typically designed for one person and consisting of one or more legs, a flat or slightly angled seat and a back-rest. They may be made of wood, metal, or synthetic materials, and may be padded or upholstered in various colors and fabrics." />
+            </a>
+        </li>
+    </ul>
+</div>
+
+@section scripts{
+    <script type="text/javascript">
+
+        $(function () {
+            $('.listitem').on('click', function () {
+                $('.listitem').removeClass('active');
+                $(this).addClass('active');
+            })
+        });
+
+        function ViewDetail(e){
+            var value = $(e).attr('data-value');
+            var desc=$('#'+ value).val();
+            alert(desc);
+        }
+    </script>
+}
